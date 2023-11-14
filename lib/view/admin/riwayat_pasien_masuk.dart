@@ -1,10 +1,18 @@
+import 'package:aplikasipendaftaranklinik/main.dart';
 import 'package:aplikasipendaftaranklinik/themes/material_colors.dart';
 import 'package:aplikasipendaftaranklinik/utils/constants.dart';
 import 'package:aplikasipendaftaranklinik/view/admin/homepage_admin.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
 import '../../themes/custom_colors.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(const RiwayatPasienMasuk());
+}
 
 class RiwayatPasienMasuk extends StatefulWidget {
   const RiwayatPasienMasuk({super.key});
