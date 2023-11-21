@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:aplikasipendaftaranklinik/utils/constants.dart';
 import 'package:aplikasipendaftaranklinik/view/login.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -9,7 +7,8 @@ import 'package:aplikasipendaftaranklinik/view/register.dart';
 
 void main() {
   testWidgets('Register widget UI test', (WidgetTester tester) async {
-    await Firebase.initializeApp();
+
+        await Firebase.initializeApp();
 
     await tester.pumpWidget(const MaterialApp(
       home: Register(),
@@ -25,7 +24,7 @@ void main() {
     // Perform interaction testing: entering text and tapping buttons
     await tester.enterText(find.byType(TextFormField).first, 'faridd');
     await tester.enterText(
-        find.byType(TextFormField).at(1), 'faridddddd@faridd.com');
+        find.byType(TextFormField).at(1), 'faridddddddd@faridd.com');
     await tester.enterText(find.byType(TextFormField).last, '123456');
 
     await tester.testTextInput.receiveAction(TextInputAction.done);
@@ -34,9 +33,8 @@ void main() {
     await tester.tap(find.text('Register'));
 
     await tester.pumpAndSettle();
-
-    await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 10));
+    
+    await Future.delayed(const Duration(seconds: 5));
 
     // Verify the dialog after registration
     expect(find.text('Registrasi Berhasil'), findsOneWidget);
@@ -48,6 +46,6 @@ void main() {
 
     expect(find.byType(Login), findsOneWidget);
     await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 10));
+    await Future.delayed(const Duration(seconds: 5));
   });
 }
