@@ -7,8 +7,7 @@ import 'package:aplikasipendaftaranklinik/view/register.dart';
 
 void main() {
   testWidgets('Register widget UI test', (WidgetTester tester) async {
-
-        await Firebase.initializeApp();
+    await Firebase.initializeApp();
 
     await tester.pumpWidget(const MaterialApp(
       home: Register(),
@@ -24,7 +23,7 @@ void main() {
     // Perform interaction testing: entering text and tapping buttons
     await tester.enterText(find.byType(TextFormField).first, 'faridd');
     await tester.enterText(
-        find.byType(TextFormField).at(1), 'faridddddddd@faridd.com');
+        find.byType(TextFormField).at(1), 'fariddddddddddd@faridd.com');
     await tester.enterText(find.byType(TextFormField).last, '123456');
 
     await tester.testTextInput.receiveAction(TextInputAction.done);
@@ -33,7 +32,7 @@ void main() {
     await tester.tap(find.text('Register'));
 
     await tester.pumpAndSettle();
-    
+
     await Future.delayed(const Duration(seconds: 5));
 
     // Verify the dialog after registration
@@ -45,7 +44,6 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.byType(Login), findsOneWidget);
-    await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 5));
+    await tester.pumpAndSettle(const Duration(seconds: 5));
   });
 }
