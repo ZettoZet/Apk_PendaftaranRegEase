@@ -46,6 +46,7 @@ class _DaftarAntrianPagesAdminState extends State<DaftarAntrianPagesAdmin> {
                     child: DropdownButton(
                       items: _listStatusAntrian
                           .map((value) => DropdownMenuItem(
+                            key: Key('dropdown_item_$value'),
                                 child: Text(
                                   value,
                                 ),
@@ -238,7 +239,7 @@ class _DaftarAntrianPagesAdminState extends State<DaftarAntrianPagesAdmin> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text("No. Antrian"),
+                              const Text("No. Antrian"),
                               Text(
                                 "${data['noAntrian']}",
                                 style: const TextStyle(
