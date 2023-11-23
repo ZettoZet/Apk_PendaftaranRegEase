@@ -245,6 +245,7 @@ class _HomePagePasienState extends State<HomePagePasien> {
             ),
           ),
           ListTile(
+            key: const Key('profile'),
             onTap: () => Navigator.pushReplacement(
               context,
               MaterialPageRoute(
@@ -279,6 +280,7 @@ class _HomePagePasienState extends State<HomePagePasien> {
             ),
           ),
           ListTile(
+            key: const Key('jadwalpemeriksaan'),
             onTap: () => Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(

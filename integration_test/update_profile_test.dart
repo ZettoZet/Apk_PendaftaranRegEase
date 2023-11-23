@@ -25,18 +25,16 @@ void main() {
 
     // Tap on the email and password text fields to enter values.
     await Future.delayed(const Duration(seconds: 5));
-    await tester.enterText(find.byType(TextFormField).first, 'puput@mail.com');
+    await tester.enterText(find.byType(TextFormField).first, 'puputs@mail.com');
     await Future.delayed(const Duration(seconds: 2));
-    await tester.enterText(find.byType(TextFormField).last, 'Puput1414');
+    await tester.enterText(find.byType(TextFormField).last, '123123');
     await Future.delayed(const Duration(seconds: 2));
 
     await tester.testTextInput.receiveAction(TextInputAction.done);
     await tester.pumpAndSettle();
     // Tap on the login button.
     await tester.tap(find.byType(ElevatedButton));
-    await Future.delayed(const Duration(seconds: 5));
-
-    // Wait for the login process to complete.
+    await Future.delayed(const Duration(seconds: 2));
     await tester.pumpAndSettle();
 
     await tester.tap(find.byType(DrawerButton));
@@ -45,14 +43,14 @@ void main() {
 
     await Future.delayed(const Duration(seconds: 5));
 
-    await tester.tap(find.byType(ListView).first);
+    await tester.tap(find.byKey(const Key('profile')));
 
     await tester.pumpAndSettle();
 
     await Future.delayed(const Duration(seconds: 5));
     await tester.pumpAndSettle();
     await Future.delayed(const Duration(seconds: 5));
-    await tester.enterText(find.byType(TextFormField).first, 'Raihan');
+    await tester.enterText(find.byType(TextFormField).first, 'Puput');
 
     await tester.pumpAndSettle();
 
@@ -73,8 +71,21 @@ void main() {
 
     await Future.delayed(const Duration(seconds: 2));
     await tester.enterText(find.byType(TextFormField).last, 'Tangerang');
+    await Future.delayed(const Duration(seconds: 2));
+    await tester.testTextInput.receiveAction(TextInputAction.done);
 
     await tester.pumpAndSettle();
+
+    await tester.tap(find.byType(ElevatedButton));
+    await tester.pumpAndSettle();
+    await Future.delayed(const Duration(seconds: 2));
+
+    //expect(find.text('Registrasi Berhasil'), findsOneWidget);
+    expect(find.text('OK'), findsOneWidget);
+
+    await tester.tap(find.text('OK'));
+    await tester.pumpAndSettle();
+    await Future.delayed(const Duration(seconds: 2));
 
     // You can perform more interactions and assertions based on your specific use cases
   });

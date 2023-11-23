@@ -24,9 +24,9 @@ void main() {
 
     // Tap on the email and password text fields to enter values.
     await Future.delayed(const Duration(seconds: 5));
-    await tester.enterText(find.byType(TextFormField).first, 'puput@mail.com');
+    await tester.enterText(find.byType(TextFormField).first, 'puputs@mail.com');
     await Future.delayed(const Duration(seconds: 2));
-    await tester.enterText(find.byType(TextFormField).last, 'Puput1414');
+    await tester.enterText(find.byType(TextFormField).last, '123123');
     await Future.delayed(const Duration(seconds: 2));
 
     await tester.testTextInput.receiveAction(TextInputAction.done);
