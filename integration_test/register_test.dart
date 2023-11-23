@@ -4,8 +4,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:aplikasipendaftaranklinik/view/register.dart';
+import 'package:integration_test/integration_test.dart';
 
 void main() {
+IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
   testWidgets('Register widget UI test', (WidgetTester tester) async {
     await Firebase.initializeApp();
 
@@ -47,6 +50,6 @@ void main() {
     await Future.delayed(const Duration(seconds: 2));
 
     expect(find.byType(Login), findsOneWidget);
-    await tester.pumpAndSettle(const Duration(seconds: 5));
+    await tester.pumpAndSettle(const Duration(seconds: 2));
   });
 }

@@ -45,7 +45,6 @@ void main() {
     await tester.pumpAndSettle();
     await Future.delayed(const Duration(seconds: 2));
     await tester.tap(find.text('OK'));
-    await tester.pumpAndSettle();
-    await Future.delayed(const Duration(seconds: 5));
+    await tester.pumpAndSettle(const Duration(seconds: 3));
   });
 }

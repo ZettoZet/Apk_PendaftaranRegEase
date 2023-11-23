@@ -55,6 +55,7 @@ class _PendaftaranState extends State<Pendaftaran> {
   }
 
   Future<Null> _selectTime(BuildContext context) async {
+    const Key('time-picker-dial');
     final TimeOfDay? picked = await showTimePicker(
       context: context,
       initialTime: selectedTime,
