@@ -1,5 +1,4 @@
 import 'package:aplikasipendaftaranklinik/controller/auth_controller.dart';
-import 'package:aplikasipendaftaranklinik/model/user_model.dart';
 import 'package:aplikasipendaftaranklinik/themes/custom_colors.dart';
 import 'package:aplikasipendaftaranklinik/themes/material_colors.dart';
 import 'package:aplikasipendaftaranklinik/utils/constants.dart';
@@ -208,6 +207,7 @@ class _HomePagePasienState extends State<HomePagePasien> {
 
   Widget homeDrawer() {
     return Drawer(
+      key: const Key('drawer pasien'),
       child: ListView(
         children: [
           DrawerHeader(
@@ -293,6 +293,7 @@ class _HomePagePasienState extends State<HomePagePasien> {
             ),
           ),
           ListTile(
+            key: const Key('riwayatpemeriksaan'),
             onTap: () => Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
