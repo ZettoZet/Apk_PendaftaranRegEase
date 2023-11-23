@@ -43,7 +43,7 @@ class _HomePagePasienState extends State<HomePagePasien> {
     DateTime now = DateTime.now();
     int currentHour = now.hour;
 
-    if (currentHour >= 20 && currentHour <= 24 ||
+    if (currentHour >= 23 && currentHour <= 24 ||
         currentHour >= 00 && currentHour < 6) {
       showDialog(
         context: context,
@@ -178,6 +178,7 @@ class _HomePagePasienState extends State<HomePagePasien> {
         title: const Text(titleHome),
         actions: [
           IconButton(
+            key: const Key('logout'),
             onPressed: showDialogExitToApp,
             icon: const Icon(
               Icons.exit_to_app,
