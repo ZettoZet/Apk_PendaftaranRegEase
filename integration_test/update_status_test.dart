@@ -2,6 +2,7 @@ import 'package:aplikasipendaftaranklinik/view/admin/daftar_antrian_a.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:integration_test/integration_test.dart';
 
 void main() {
   testWidgets('Test DaftarAntrianPagesAdmin UI', (WidgetTester tester) async {
@@ -28,6 +29,7 @@ void main() {
     await tester.tap(find.byType(GestureDetector).at(1));
 
     await tester.pumpAndSettle();
+    await Future.delayed(const Duration(seconds: 2));
 
     // Verify if the status dropdown dialog is shown
     expect(find.text('Edit Status Antrian'), findsOneWidget);
@@ -35,14 +37,15 @@ void main() {
 
     await tester.tap(find.text('Pilih Status Antrian'));
     await tester.pumpAndSettle();
+    await Future.delayed(const Duration(seconds: 2));
     await tester.tap(find.byKey(const Key('dropdown_item_Selesai')));
     await tester.pumpAndSettle();
+    await Future.delayed(const Duration(seconds: 2));
     await tester.tap(find.text('Simpan'));
     await tester.pumpAndSettle();
+    await Future.delayed(const Duration(seconds: 2));
     await tester.tap(find.text('OK'));
     await tester.pumpAndSettle();
     await Future.delayed(const Duration(seconds: 5));
-
-    // You can perform more interactions and assertions based on your specific use cases
   });
 }

@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "866809474881",
-    "project_id": "regease-test",
-    "storage_bucket": "regease-test.appspot.com"
+    "project_number": "375004174312",
+    "project_id": "regease-2a937",
+    "storage_bucket": "regease-2a937.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:866809474881:android:43ce366857f5ec8515fbc0",
+        "mobilesdk_app_id": "1:375004174312:android:84b086674eab25495ab65d",
         "android_client_info": {
           "package_name": "com.example.aplikasipendaftaranklinik"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDRZr7X4aD935x-CrlvvnDdMcW9tEg1hGU"
+          "current_key": "AIzaSyAoeVDFpYPj-uMb60FBBdFIN9ELWJV3IgM"
         }
       ],
       "services": {
