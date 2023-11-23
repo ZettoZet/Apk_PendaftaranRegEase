@@ -1,9 +1,8 @@
 import 'package:aplikasipendaftaranklinik/themes/material_colors.dart';
 import 'package:aplikasipendaftaranklinik/utils/constants.dart';
-import 'package:aplikasipendaftaranklinik/view/splashscreen.dart';
+import 'package:aplikasipendaftaranklinik/view/login.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: colorPrimary,
       ),
-      home: const SplashScreen(),
+      home: Login(),
     );
   }
 }

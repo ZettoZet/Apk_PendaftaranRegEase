@@ -125,6 +125,7 @@ class _LoginState extends State<Login> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12), color: Colors.white),
               child: TextFormField(
+                key: const Key('emailTextField'),
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
                 style: const TextStyle(
@@ -158,6 +159,7 @@ class _LoginState extends State<Login> {
                 color: Colors.white,
               ),
               child: TextFormField(
+                key: const Key('passwordTextField'),
                 obscureText: _showPassword,
                 textInputAction: TextInputAction.done,
                 style: const TextStyle(

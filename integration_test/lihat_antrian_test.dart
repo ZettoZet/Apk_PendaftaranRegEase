@@ -9,7 +9,7 @@ import 'package:integration_test/integration_test.dart';
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
 
-  testWidgets('Login', (WidgetTester tester) async {
+  testWidgets('Lihat Antrian', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     app.main();
     await Firebase.initializeApp();
@@ -39,6 +39,9 @@ void main() {
     await Future.delayed(const Duration(seconds: 2));
 
     // Wait for the login process to complete.
+    await tester.pumpAndSettle();
+    await Future.delayed(const Duration(seconds: 2));
+    await tester.tap(find.byType(ElevatedButton));
     await tester.pumpAndSettle();
   });
 }
